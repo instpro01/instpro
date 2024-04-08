@@ -1,0 +1,4 @@
+prepare|clflush	DS:[rax]
+trigger|mov	eax, DS:[rip + 0x200a9b]#mov	eax, eax#cmp	DS:[rbp + 0xfffffffffffffff8], rax#jnb	0x16
+encode|movzx edx, DS:[t7 + 0x200fec]#movzx eax, DS:[t7 + 0x200b85]#and eax, edx#mov DS:[t7 + 0x200b7d], al
+recover|rdtscp#mov	esi, ecx#mov	rcx, DS:[rbp + 0xffffffffffffffa8]#mov	DS:[rcx], esi#sal	rdx, 0x20#or	rax, rdx#mov	rbx, rax#mov	rax, DS:[rbp + 0xffffffffffffffd0]#movzx	eax, DS:[rax]#movzx	eax, eax#mov	DS:[rbp + 0xffffffffffffffa4], eax#lea	rax, DS:[rbp + 0xffffffffffffffa4]#mov	DS:[rbp + 0xffffffffffffffb0], rax#rdtscp

