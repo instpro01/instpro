@@ -1,0 +1,4 @@
+prepare|mov eax, DS:[rbp + 0xfffffffffffffff8]#sal eax, 0x9#cdqe rax#movzx eax, DS:[rax + 0x6025c0]#movzx eax, eax#add DS:[rbp + 0xfffffffffffffffc], eax#add DS:[rbp + 0xfffffffffffffff8], 0x1#cmp DS:[rbp + 0xfffffffffffffff8], 0xff#jle 0xffffffffffffffde
+trigger|mov	eax, DS:[rip + 0x401a0c]#mov	eax, eax#cmp	rax, DS:[rbp + 0xfffffffffffffff8]#jbe	0x22
+encode|mov rax, DS:[rbp + 0xfffffffffffffff8]#add rax, 0x604080#movzx eax, DS:[rax]#movzx eax, eax#sal eax, 0x9#cdqe rax#mov DS:[rax + 0x6045c0], 0x2
+recover|rdtscp#mov	esi, ecx#mov	rcx, DS:[rbp + 0xffffffffffffffe8]#mov	DS:[rcx], esi#sal	rdx, 0x20#or	rax, rdx#mov	rbx, rax#mov	rax, DS:[rbp + 0xffffffffffffffe0]#movzx	eax, DS:[rax]#movzx	eax, eax#mov	DS:[rbp + 0xffffffffffffffd4], eax#lea	rax, DS:[rbp + 0xffffffffffffffd4]#mov	DS:[rbp + 0xfffffffffffffff0], rax#rdtscp

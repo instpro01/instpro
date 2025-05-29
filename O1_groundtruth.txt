@@ -1,0 +1,4 @@
+prepare|clflush	DS:[rax]
+trigger|jz	0x22#xor	esi, esi#mov	rbx, DS:[rip + 0x2017e5]#mov	SS:[rsp], rsi
+encode|movq rax, xmm0#add rax, 0x601080#shl rax, 0xc#jz 0x40095b#mov rbx, DS:[rbx + rax]#xor eax, eax
+recover|rdtscp#MFENCE#sal	rdx, 0x20#or	rax, rdx#ret#mov	rsi, rax#mov	rcx, rdi#mov	rax, DS:[rcx]#xor	eax, eax#call	0xffffffffffffff3f#MFENCE#rdtscp
